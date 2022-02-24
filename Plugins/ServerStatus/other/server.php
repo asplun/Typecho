@@ -42,7 +42,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
          <!--文章内容-->
          <div id="post-content" class="wrapper-lg">
             <div class="entry-content l-h-2x">
-              <?php echo Content::postContent($this,$this->user->hasLogin()); ?>
+            <!--修复post标签-->	
+              <?php echo Content::postContentHTML($this,$this->user->hasLogin()); ?>
             </div>
 <?php if(empty($_GET['id']) && ServerStatus_Plugin::GetCount() > 1){ ?>
                 <div class="row">
